@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html'; // Redirect to login page
+            }
+        </script>
+    </head>
+
+    
+    <body>
+        <header class="container">
+            <div class="hero">
+                <button id="logoutBtn" style="position: absolute; top: 20px; right: 20px; background-color: #dc3545; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Logout</button>
+                <h2><b>
+                    Organise your day with <i>To-Do List</i> and conquer your goals!!
+                </b></h2>
+                <p class="hero-subHeading">What's On Your Mind Today?<br>[Don't leave it for tomorrow...]</p>
+                <button id="simpleBtn">Start adding tasks:</button>
+            </div>
+        </header>
+
+        <div class="to-do-appSection">
+            <div class="to-do-taskContainer">
+                <h3>Today's Tasks</h3>
+                <p id="currentDate" class="date-display"></p>
+                <div class="task-inputSection">
+                    <input type="text" id="newTask-input" placeholder="Add a new Task">
+                    <button id="addTaskBtn">Add a Task</button>
+                </div>
+                <ul id="taskList"></ul>
+                <div class="opt-filters">
+                    <button id="filterAll" class="active">All</button>
+                    <button id="filterActive">Active</button>
+                    <button id="filterCompleted">Completed</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

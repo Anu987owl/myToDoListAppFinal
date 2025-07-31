@@ -1,0 +1,278 @@
+/* General Body Styles */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+h2{
+   font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+/* Header/Hero Section */
+.container {
+    width: 100%;
+    background: linear-gradient(135deg, #0a88b9, #020427);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero h2 i {
+    /* font-style: normal; */
+    color: #ffd700; /* Gold color for "To-Do List" */
+}
+
+.hero-subHeading {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container button#simpleBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.container button#simpleBtn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* To-Do Application Section */
+.to-do-appSection {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.to-do-taskContainer h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px; /* Adjusted margin */
+    color: #c4004b;
+    text-align: center;
+}
+
+/* NEW: Date Display Style */
+.date-display {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Task Input Section */
+.task-inputSection {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-inputSection input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.task-inputSection input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+.task-inputSection button#addTaskBtn {
+    background-color: #002853;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-inputSection button#addTaskBtn:hover {
+    background-color: #002246;
+}
+
+/* Task List */
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#taskList li:hover {
+    background-color: #eef;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for completed tasks */
+#taskList li.completed {
+    text-decoration: line-through;
+    color: #444444;
+    background-color: #e0ffe0; /* Light green for completed tasks */
+    order: 1; /* Pushes completed tasks to the end of the flex container */
+}
+
+/* Styles for the checkbox */
+#taskList li input[type="checkbox"] {
+    margin-right: 10px;
+    min-width: 20px; /* Ensure a consistent size */
+    min-height: 20px;
+    cursor: pointer;
+    /* Optional: Custom checkbox appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #001e3f;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.2s, border-color 0.2s;
+    position: relative; /* For the checkmark */
+}
+
+#taskList li input[type="checkbox"]:checked {
+    background-color: #001c3a;
+    border-color: #001c3a;
+}
+
+#taskList li input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Checkmark Unicode character */
+    display: block;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 18px; /* Vertically center the checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#taskList li span {
+    flex-grow: 1;
+    /* Removed cursor: pointer from here as checkbox handles completion */
+    padding-right: 10px;
+}
+
+#taskList li .task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+#taskList li .task-actions button {
+    background: none;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+#taskList li .task-actions .delete-btn {
+    color: #dc3545;
+}
+
+#taskList li .task-actions .delete-btn:hover {
+    background-color: #f8d7da;
+}
+
+#taskList li .task-actions .edit-btn {
+    color: #ffc107;
+}
+
+#taskList li .task-actions .edit-btn:hover {
+    background-color: #fff3cd;
+}
+
+/* Filter Buttons */
+.opt-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.opt-filters button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.opt-filters button:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.opt-filters button.active {
+    background-color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero-subHeading {
+        font-size: 1em;
+    }
+
+    .task-inputSection {
+        flex-direction: column;
+    }
+
+    .task-inputSection button#addTaskBtn {
+        width: 100%;
+    }
+
+    .opt-filters {
+        flex-wrap: wrap;
+    }
+}

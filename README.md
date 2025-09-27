@@ -1,4 +1,4 @@
-# myToDoListAppFinal
+# ToDoListApp
 
 This project is a clean, secure, and user-friendly web application for managing the user's daily tasks. It combines a simple login system with a powerful To-Do list that remembers tasks and even reminds the user about unfinished work from yesterday.
 
